@@ -1,0 +1,6 @@
+.medium-2.columns.right[data-sticky-container]
+  .sticky[data-sticky data-margin-top="0"]
+    h2 Pages
+    ul
+      - Page.all.each do |page|
+        li = link_to page.title, page

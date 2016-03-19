@@ -8,5 +8,8 @@ nav.top-bar( data-topbar )
         i.fi-list
 
   section.top-bar-section
+    ul
+      -Page.all.each do |page|
+        li =link_to page.title, page
     = render "navigation_main"
     = render "navigation_user"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails CMSFS: development" uuid="9658fcf9-31c8-424f-8712-3666397ed566">
+      <first-sync>true</first-sync>
+      <user-name>cms</user-name>
+      <user-password>df99df99df99df9cdf9ddf9fdf9e</user-password>
+    </data-source>
+    <data-source name="Rails CMSFS: test" uuid="bdbd1f88-741a-48a1-9401-b9bc02768cbe">
+      <user-name>cms</user-name>
+      <user-password>df99df99df99df9cdf9ddf9fdf9e</user-password>
+    </data-source>
+  </component>
+</project>

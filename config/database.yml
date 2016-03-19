@@ -2,15 +2,18 @@ defaults: &defaults
   adapter: postgresql
   encoding: unicode
   min_messages: warning
+  host: localhost
+  username: cms
+  password: 3336754
   timeout: 5000
   pool: <%= [ENV.fetch("MAX_THREADS", 5), ENV.fetch("DB_POOL", 5)].max %>
 
 development:
-  database: <%= ENV.fetch("DATABASE_NAME", File.basename(Rails.root)) %>_dev
+  database: cms_dev
   <<: *defaults
 
 test:
-  database: <%= ENV.fetch("DATABASE_NAME", File.basename(Rails.root)) %>_test
+  database: cms_test
   <<: *defaults
 
 production: &deploy
