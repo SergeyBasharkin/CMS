@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :pages
 
-  get '/test', to: 'pages#test'
+  get "/test", to: "pages#test"
   root to: "pages#home"
 end

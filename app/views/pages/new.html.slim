@@ -2,4 +2,5 @@
   = simple_form_for page do |f|
     =f.input :title
     =f.input :body
+    =f.collection_radio_buttons :position, [['top_menu', 'top menu'] ,['right_menu', 'right menu']], :first, :last
     =f.submit

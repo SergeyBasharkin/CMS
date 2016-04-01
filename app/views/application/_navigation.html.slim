@@ -9,7 +9,7 @@ nav.top-bar( data-topbar )
 
   section.top-bar-section
     ul
-      -Page.all.each do |page|
+      -Page.where(position: "top_menu").each do |page|
         li =link_to page.title, page
     = render "navigation_main"
     = render "navigation_user"
