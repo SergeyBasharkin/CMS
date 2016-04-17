@@ -1,0 +1,41 @@
+.row
+  .medium-8.medium-centered.columns
+    h2 Pages
+    table.table.table-striped.pages-list
+      thead
+        tr
+          th Author
+          th Title
+          th URL
+          th Go to
+          th Edit content
+          th Delete
+
+      - pages.each do |page|
+        -if current_user.nil?
+          - policy=PagePolicy.new(User.new,page)
+        -else
+          - policy = PagePolicy.new(current_user, page)
+        tr
+          td
+            = page.author
+            br
+            /= page.author_role
+          td= page.title
+          td= page.url
+          td.text-center
+            = link_to(page, class: 'btn') do
+              i.fi-eye
+          td.text-center
+            - if policy.edit?
+              = link_to(edit_page_path(page), class: 'btn') do
+                i.fi-pencil
+          td.text-center
+            - if policy.destroy?
+              = link_to(page, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' }) do
+                i.fi-trash
+
+    br
+    = link_to new_page_path, class: 'tiny button' do
+      i.fi-plus
+      |  New Page

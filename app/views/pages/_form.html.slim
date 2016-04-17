@@ -1,0 +1,13 @@
+.row
+  = simple_form_for page do |f|
+    .form-inputs
+      =f.input :title
+      /=f.input :body, input_html: {class: "tinymce"}
+      /= f.cktext_area :page, :body, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
+      = f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'ru'}
+      =f.input :url
+      =f.collection_radio_buttons :position, [['top_menu', 'top menu'] ,['right_menu', 'right menu']], :first, :last
+    .form-actions
+      .button-group data-grouptype="OR"
+        =f.button :submit, class: "small button primary radius"
+        =link_to 'Back', :back ,class: "small button success radius"

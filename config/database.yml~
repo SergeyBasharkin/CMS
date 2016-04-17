@@ -3,17 +3,17 @@ defaults: &defaults
   encoding: unicode
   min_messages: warning
   host: localhost
-  username: my_cms
+  username: cms
   password: 3336754
   timeout: 5000
   pool: <%= [ENV.fetch("MAX_THREADS", 5), ENV.fetch("DB_POOL", 5)].max %>
 
 development:
-  database: my_cms_dev
+  database: cms_dev
   <<: *defaults
 
 test:
-  database: my_cms_test
+  database: cms_test
   <<: *defaults
 
 production: &deploy
