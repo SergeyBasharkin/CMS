@@ -2,5 +2,9 @@
   .sticky[data-sticky data-margin-top="0"]
     h2 Pages
     ul
-      -Page.where(position: "right_menu").each do |page|
+      li
+        h4 = link_to 'All pages', pages_path
+      - Page.where(position: 'right_menu').each do |page|
+        li = link_to page.title, page
+      /-pages.right_menu.each do |page|
         li = link_to page.title, page

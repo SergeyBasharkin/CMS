@@ -6,6 +6,18 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.n_plus_one_query_enable     = false
+
+# Detect eager-loaded associations which are not used
+    Bullet.unused_eager_loading_enable = false
+
+# Detect unnecessary COUNT queries which could be avoided
+# with a counter_cache
+    Bullet.counter_cache_enable        = false
+
+  end
   # Do not eager load code on boot.
   config.eager_load = false
 

@@ -3,5 +3,5 @@ class Page < ActiveRecord::Base
   validates :position, inclusion: { in: %w(top_menu right_menu) }
   belongs_to :user
 
-  scope :sorted,-> { includes(:user).order(title: :asc) }
+  scope :sorted,-> { order(title: :asc) }
 end
