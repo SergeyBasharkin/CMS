@@ -3,4 +3,7 @@ class PaginatingDecorator < Draper::CollectionDecorator
   def right_menu
     object.where(position: 'right_menu')
   end
+  def top_menu
+    object.where(position: 'top_menu')
+  end
 end

@@ -4,7 +4,5 @@
     ul
       li
         h4 = link_to 'All pages', pages_path
-      - Page.where(position: 'right_menu').each do |page|
-        li = link_to page.title, page
-      /-pages.right_menu.each do |page|
+      -pages.right_menu.each do |page|
         li = link_to page.title, page
