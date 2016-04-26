@@ -1402,6 +1402,16 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="rails_12factor (vbundled(0.0.3), /home/sergey/CMS/.bundle/ruby/2.2.0/gems/rails_12factor-0.0.3) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_12factor-0.0.3/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_12factor-0.0.3/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="rails_best_practices (vbundled(1.15.7), /home/sergey/CMS/.bundle/ruby/2.2.0/gems/rails_best_practices-1.15.7) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_best_practices-1.15.7/bin" />
@@ -1412,6 +1422,18 @@
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_best_practices-1.15.7/bin" />
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_best_practices-1.15.7/lib" />
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_best_practices-1.15.7/assets" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rails_serve_static_assets (vbundled(0.0.5), /home/sergey/CMS/.bundle/ruby/2.2.0/gems/rails_serve_static_assets-0.0.5) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_serve_static_assets-0.0.5/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_serve_static_assets-0.0.5/gemfiles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_serve_static_assets-0.0.5/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/rails_serve_static_assets-0.0.5/gemfiles" />
         </SOURCES>
       </library>
     </orderEntry>
