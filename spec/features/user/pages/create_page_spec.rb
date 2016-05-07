@@ -10,10 +10,10 @@ feature "Create page", js: true do
 
   def fckeditor_fill_in(id, params )
     page.execute_script %Q{
-      var ckeditor = CKEDITOR.instances.#{id}
-      ckeditor.setData('#{params}')
-      ckeditor.focus()
-      ckeditor.updateElement()
+      var ckeditor = CKEDITOR.instances.#{id};
+      ckeditor.setData('#{params}');
+      ckeditor.focus();
+      ckeditor.updateElement();
     }
   end
 # Example:

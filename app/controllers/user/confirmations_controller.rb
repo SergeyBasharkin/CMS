@@ -1,4 +1,6 @@
 class User::ConfirmationsController < Devise::ConfirmationsController
+
+  expose_decorated(:pages) {Page.includes(:user).sorted}
   # GET /resource/confirmation/new
   # def new
   #   super

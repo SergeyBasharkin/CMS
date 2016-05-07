@@ -44,6 +44,8 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem 'paper_trail'
+gem 'differ'
 
 group :staging, :production do
   gem "newrelic_rpm"

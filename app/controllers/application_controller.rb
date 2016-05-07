@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   responders :flash
   respond_to :html
 
+  before_filter :set_paper_trail_whodunnit
+
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end

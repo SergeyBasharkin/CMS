@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2335410713">
+  <component name="DataSourceManagerImpl" format="xml" hash="586812334">
     <data-source source="LOCAL" name="Rails CMSFS: development" uuid="9658fcf9-31c8-424f-8712-3666397ed566">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>

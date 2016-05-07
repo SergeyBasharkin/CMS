@@ -598,6 +598,16 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="differ (vbundled(0.1.2), /home/sergey/CMS/.bundle/ruby/2.2.0/gems/differ-0.1.2) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/differ-0.1.2/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/differ-0.1.2/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="docile (vbundled(1.1.5), /home/sergey/CMS/.bundle/ruby/2.2.0/gems/docile-1.1.5) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/docile-1.1.5/lib" />
@@ -1190,6 +1200,20 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/orm_adapter-0.5.0/lib" />
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/orm_adapter-0.5.0/gemfiles" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="paper_trail (vbundled(5.0.0), /home/sergey/CMS/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0/.github" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0/gemfiles" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0/.github" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.2.0/gems/paper_trail-5.0.0/gemfiles" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -1,5 +1,5 @@
 class PageDecorator < ApplicationDecorator
-  delegate :title, :url, :index, :body, :position
+  delegate :id,:title, :url, :index, :body, :position, :versions
 
 
   def author

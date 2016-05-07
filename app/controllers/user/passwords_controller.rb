@@ -1,5 +1,7 @@
 class User::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
+  expose_decorated(:pages) {Page.includes(:user).sorted}
+
   # def new
   #   super
   # end

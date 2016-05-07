@@ -1,3 +1,4 @@
+require 'differ'
 class PagesController < ApplicationController
   before_action :authenticate_user!, only: %w(new create edit update destroy)
 
@@ -29,6 +30,11 @@ class PagesController < ApplicationController
   def show
   end
 
+  def prev_version
+    @version=page.versions.find(params[:ver])
+
+  end
+
   def test
   end
 
@@ -43,7 +49,6 @@ class PagesController < ApplicationController
   end
 
   private
-
   def page_params
     params.require(:page).permit(:user_id,
                                  :title,

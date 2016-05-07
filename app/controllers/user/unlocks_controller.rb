@@ -1,4 +1,6 @@
 class User::UnlocksController < Devise::UnlocksController
+  expose_decorated(:pages) {Page.includes(:user).sorted}
+
   # GET /resource/unlock/new
   # def new
   #   super
