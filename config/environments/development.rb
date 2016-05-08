@@ -8,42 +8,55 @@ Rails.application.configure do
 
   config.after_initialize do
     Bullet.enable = true
-    Bullet.n_plus_one_query_enable     = false
+    Bullet.n_plus_one_query_enable = false
 
 # Detect eager-loaded associations which are not used
     Bullet.unused_eager_loading_enable = false
 
 # Detect unnecessary COUNT queries which could be avoided
 # with a counter_cache
-    Bullet.counter_cache_enable        = false
+    Bullet.counter_cache_enable = false
 
   end
   # Do not eager load code on boot.
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.raise_delivery_errors = true
 
   # Preview email in the browser instead of sending it.
   # config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { :host => 'sergeycms.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default :charset => "utf-8"
+  c#onfig.action_mailer.default_url_options = {:host => 'https://sergeycms.herokuapp.com'}
+ # config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.perform_deliveries = true
+  #config.action_mailer.default :charset => "utf-8"
 
+  # config.action_mailer.smtp_settings = {
+  #     address: "smtp.gmail.com",
+  #     port: 587,
+  #     domain: "gmail.com",
+  #     authentication: :login,
+  #     enable_starttls_auto: true,
+  #     user_name: "sergeybasharkin@gmail.com",
+  #     password: "ariarrn3336754"
+  # }
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: 587,
-      domain: "gmail.com",
-      authentication: :login,
-      enable_starttls_auto: true,
-      user_name: "sergeybasharkin@gmail.com",
-      password: "ariarrn3336754"
+      domain: "myprojectdomain.com",
+      user_name: "xxxx@gmail.com",
+      password: "xxxx",
+      authentication: 'plain',
+      enable_starttls_auto: true
   }
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
