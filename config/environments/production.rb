@@ -67,19 +67,21 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable Email delivery via custom SMTP server or via SendGrid by default
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'sergeycms.herokuapp.com' }
-  config.action_mailer.smtp_settings = {
-      authentication:       :plain,
-      enable_starttls_auto: true,
-      openssl_verify_mode:  nil,
-      address:              "smtp.mail.ru",
-      port:                  465,
-      domain:               "heroku.com",
-      user_name:            "rock-n-rolllll@bk.ru",
-      password:             "njhbyfhfujhycgfhnfr3336754"
-    }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
 
+  config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: ENV["GMAIL_DOMAIN"],
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
