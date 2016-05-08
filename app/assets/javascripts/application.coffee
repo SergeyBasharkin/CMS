@@ -11,7 +11,6 @@
 #= require skim
 #= require_tree ../templates
 #= require_tree .
-#= require ckeditor/override
 #= require ckeditor/init
 $(document).foundation()
 

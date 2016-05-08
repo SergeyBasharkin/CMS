@@ -6,9 +6,6 @@ Ckeditor.setup do |config|
   # available as additional gems.
   require "ckeditor/orm/active_record"
 
-  config.assets.precompile += Ckeditor.assets
-  config.assets.precompile += %w( ckeditor/* )
-  config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   # Allowed image file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
