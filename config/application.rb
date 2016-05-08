@@ -22,7 +22,9 @@ module RailsBase
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w(ckeditor/*)
 
     # Enable deflate / gzip compression of controller-generated responses
     config.middleware.use Rack::Deflater
