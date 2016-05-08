@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get "/test", to: "pages#test"
 
-  get "/pages/:id/version/:ver", to: "pages#prev_version"
+   delete "/pages/:id/versions/:ver" ,to: "versions#destroy", as: "versions_destroy"
+   get "/pages/:id/version/:ver", to: "versions#show", as: "version"
+   get "/pages/:id/version/accept/:ver", to: "versions#accept", as: "versions_accept"
   root to: "pages#home"
 end

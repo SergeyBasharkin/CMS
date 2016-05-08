@@ -1,9 +1,0 @@
-.medium-2.columns.right[data-sticky-container]
-  .sticky[data-sticky data-margin-top="0"]
-    h2 Pages
-    ul
-      li = link_to 'cur version', page
-      -unless page.versions.size==0
-        -page.versions.each do |version|
-          li = link_to version.id, "/pages/#{page.id}/version/#{version.id}"
-          li  = version.reify.live?

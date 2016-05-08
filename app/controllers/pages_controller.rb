@@ -30,11 +30,6 @@ class PagesController < ApplicationController
   def show
   end
 
-  def prev_version
-    @version=page.versions.find(params[:ver])
-
-  end
-
   def test
   end
 

@@ -67,20 +67,19 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable Email delivery via custom SMTP server or via SendGrid by default
-  if ENV["SMTP_USERNAME"] || ENV["SENDGRID_USERNAME"]
-    config.action_mailer.delivery_method = :smtp
-
-    config.action_mailer.smtp_settings = {
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'sergeycms.herokuapp.com' }
+  config.action_mailer.smtp_settings = {
       authentication:       :plain,
       enable_starttls_auto: true,
-      openssl_verify_mode:  ENV.fetch("SMTP_OPENSSL_VERIFY_MODE", nil),
-      address:              ENV.fetch("SMTP_ADDRESS", "smtp.sendgrid.net"),
-      port:                 ENV.fetch("SMTP_PORT", 587),
-      domain:               ENV.fetch("SMTP_DOMAIN", "heroku.com"),
-      user_name:            ENV.fetch("SMTP_USERNAME") { ENV.fetch("SENDGRID_USERNAME") },
-      password:             ENV.fetch("SMTP_PASSWORD") { ENV.fetch("SENDGRID_PASSWORD") }
+      openssl_verify_mode:  nil,
+      address:              "smtp.mail.ru",
+      port:                  465,
+      domain:               "heroku.com",
+      user_name:            "rock-n-rolllll@bk.ru",
+      password:             "njhbyfhfujhycgfhnfr3336754"
     }
-  end
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

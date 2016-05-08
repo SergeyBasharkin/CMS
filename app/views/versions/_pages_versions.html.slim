@@ -1,0 +1,14 @@
+.medium-2.columns.right[data-sticky-container]
+  .sticky[data-sticky data-margin-top="0"]
+    h2 Pages
+    ul
+      li = link_to 'cur version', page
+      -unless page.versions.size==0
+        -page.versions.each do |version|
+          li
+            = link_to version.id, version_path(page.id,version.id)
+            = link_to(versions_destroy_path(page.id,version.id), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}) do
+              i.fi-trash
+            = link_to(versions_accept_path(page.id,version.id),data: {confirm: 'Are you sure?'}) do
+              i.fi-
+          li  = version.reify.live?
