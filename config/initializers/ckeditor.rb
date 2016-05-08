@@ -5,7 +5,7 @@ Ckeditor.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require "ckeditor/orm/active_record"
-  
+
   config.assets.precompile += Ckeditor.assets
   config.assets.precompile += %w( ckeditor/* )
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)

@@ -73,6 +73,9 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
+  config.serve_static_assets = true
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+  config.assets.compile = false # we don't want compilation fallbacks
 
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
