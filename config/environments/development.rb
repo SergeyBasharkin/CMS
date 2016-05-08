@@ -30,17 +30,20 @@ Rails.application.configure do
 
   # Preview email in the browser instead of sending it.
   # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { :host => 'sergeycms.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
   config.action_mailer.smtp_settings = {
-      authentication:       :plain,
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: ENV["GMAIL_DOMAIN"],
+      authentication: "plain",
       enable_starttls_auto: true,
-      openssl_verify_mode:  nil,
-      address:              "smtp.mail.ru",
-      port:                  465,
-      domain:               "heroku.com",
-      user_name:            "rock-n-rolllll@bk.ru",
-      password:             "njhbyfhfujhycgfhnfr3336754"
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
   }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
