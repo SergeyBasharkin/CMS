@@ -58,7 +58,9 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-
+  config.serve_static_assets = true
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+  config.assets.compile = false # we don't want compilation fallback
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = ENV["ASSET_HOST"] if ENV["ASSET_HOST"]
 
@@ -67,23 +69,20 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable Email delivery via custom SMTP server or via SendGrid by default
-  Rails.application.routes.default_url_options[:host] = 'sergeycms.herokuapp.com'
   config.action_mailer.default_url_options = { :host => 'sergeycms.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
-  config.serve_static_assets = true
-  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-  config.assets.compile = false # we don't want compilation fallbacks
 
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: 587,
+      domain: ENV["GMAIL_DOMAIN"],
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: "sergeybasharkin@gmail.com",
-      password: "ariarrn3336754"
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
