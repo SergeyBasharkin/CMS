@@ -3,6 +3,9 @@
     h2 Pages
     ul
       li
-        h4 = link_to 'All pages', pages_path
-      -pages.right_menu.each do |page|
-        li = link_to page.title, page
+        h4
+          = link_to 'All pages', pages_path
+        ul
+          -pages.right_menu.each do |page|
+            li
+              = link_to page.title, page

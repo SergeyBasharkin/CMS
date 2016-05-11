@@ -4,11 +4,11 @@ code {
   font-weight: normal;
 }
 del{
-  background-color: red;
+  background-color: #ff4b33;
 }
 
 ins{
-  background-color: yellow;
+  background-color: #62ff00;
 }
 
 h1,
@@ -28,4 +28,14 @@ li {
 
 .links {
   font-size: .85rem;
+}
+.myli{
+  display: inline; /* Отображать как строчный элемент */
+  margin-right: 5px; /* Отступ слева */
+  border: 0.3px solid rgb(3, 1, 71); /* Рамка вокруг текста */
+  padding: 3px;
+  margin-button: 5px;
+}
+.sticky{
+  z-index: 100;
 }

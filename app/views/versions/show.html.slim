@@ -1,3 +1,4 @@
 .row
   = render 'pages_versions'
-  =Differ.diff_by_word(version.reify.body, page.body).format_as(:html).html_safe
+  = render 'pages/pages_bar'
+  =@diff

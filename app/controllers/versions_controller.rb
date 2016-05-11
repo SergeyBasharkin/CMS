@@ -6,9 +6,10 @@ class VersionsController < ApplicationController
   expose_decorated(:version) {set_page.versions.find(params[:ver])}
 
   expose_decorated(:page) {set_page}
-  expose_decorated(:pages) {Page.includes(:user).sorted}
+  expose(:pages) {Page.includes(:user).sorted}
 
   def show
+    @diff=Differ.diff_by_word(version.reify.body, page.body).format_as(:html).html_safe
   end
 
   def destroy
@@ -18,10 +19,11 @@ class VersionsController < ApplicationController
   end
 
   def accept
-    page=set_page
     page=version.reify
+    version.destroy
     page.save
-    redirect_to page_path
+    flash[:notice] = "Version was successfully accept."
+    redirect_to page_path(page)
   end
   private
   def set_page

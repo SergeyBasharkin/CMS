@@ -1,18 +1,21 @@
-# require 'rspec'
-#
-# describe PagePolicy do
-#   describe 'edit?' do
-#     let(:page) {create :page}
-#
-#     subject {described_class.new(user, page)}
-#
-#     context "with administrator" do
-#       let(:user) {create :user, role: 'administrator'}
-#       it {is_expected.to eq true}
-#     end
-#     context "with user" do
-#       let(:user) {create :user, role: 'user'}
-#       it {is_expected.to eq  false}
-#     end
-#   end
-# end
+require 'rspec'
+require 'rails_helper'
+describe PagePolicy do
+  subject { described_class }
+  let(:page) {create :page}
+
+  permissions :edit? do
+
+    let(:admin) {create :user, role: 'administrator'}
+
+    it "whith administrator" do
+      expect(subject).to permit(admin, page)
+    end
+
+    let(:user) {create :user, role: 'user'}
+    it "whith user" do
+      expect(subject).not_to permit(user, page)
+    end
+
+  end
+end

@@ -12,10 +12,7 @@
           th Delete
 
       - pages.each do |page|
-        -if current_user.nil?
-          - policy=PagePolicy.new(current_user,page)
-        -else
-          - policy = PagePolicy.new(current_user, page)
+        - policy = PagePolicy.new(current_user, page)
         tr
           td
             = page.author

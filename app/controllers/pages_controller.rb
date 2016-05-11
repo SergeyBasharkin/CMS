@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   expose_decorated(:page, attributes: :page_params)
   expose_decorated(:pages) {Page.includes(:user).sorted}
+  expose(:user_pages) {current_user.pages}
   # expose(:page, attributes: :page_params) # if have id Page.find else create new
 
   def new
