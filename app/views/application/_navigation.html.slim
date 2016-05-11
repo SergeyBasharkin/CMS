@@ -9,7 +9,7 @@ nav.myHead.top-bar( data-topbar )
 
   section.top-bar-section
     ul
-      -pages.each do |page|
-        li =link_to page.title, page
+      -pages.top_menu.each do |page|
+        li =active_link_to page.title, page,active: :exclusive, wrap_tag: :li
     = render "navigation_main"
     = render "navigation_user"

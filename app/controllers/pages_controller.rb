@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   respond_to :html
 
   expose_decorated(:page, attributes: :page_params)
-  expose_decorated(:pages) {Page.includes(:user).sorted}
+  expose_decorated(:pages) {Page.includes(:user)}
   expose(:user_pages) {current_user.pages}
   # expose(:page, attributes: :page_params) # if have id Page.find else create new
 

@@ -6,7 +6,7 @@ class VersionsController < ApplicationController
   expose_decorated(:version) {set_page.versions.find(params[:ver])}
 
   expose_decorated(:page) {set_page}
-  expose(:pages) {Page.includes(:user).sorted}
+  expose(:pages) {Page.includes(:user)}
 
   def show
     @diff=Differ.diff_by_word(version.reify.body, page.body).format_as(:html).html_safe

@@ -4,4 +4,6 @@ class Page < ActiveRecord::Base
   belongs_to :user
   has_paper_trail :on => [:update, :destroy]
   scope :sorted,-> { order(title: :asc) }
+  scope :right_menu,->{where(position: 'right_menu')}
+  scope :top_menu, ->{where(position: 'top_menu')}
 end
